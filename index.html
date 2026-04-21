@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garimpo da Pesca | Ofertas VIP</title>
+    
+    <meta name="description" content="As melhores ofertas de pesca: Shimano, Marine Sports e mais.">
+    <meta property="og:title" content="Garimpo da Pesca | Ofertas VIP">
+    <meta property="og:description" content="Acesse nosso grupo exclusivo e acompanhe as promoções.">
+    <meta property="og:image" content="og.webp">
+    <link rel="icon" type="image/webp" href="favicon.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #0027A7;
+            --accent-orange: #F5821F;
+            --white: #FFFFFF;
+            --text-blue: #0027A7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--primary-blue);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+        }
+
+        .header { margin-bottom: 24px; }
+        
+        /* Ajuste de LCP: Logo sem lazy load para carregar instantaneamente */
+        .logo-img {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+        }
+
+        .btn {
+            background: var(--white);
+            border-radius: 50px;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-blue);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            transition: all 0.2s ease-in-out;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn:active { transform: scale(0.96); }
+
+        .info-banner {
+            cursor: default;
+            font-weight: 400;
+            line-height: 1.4;
+            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border: 1px dashed var(--white);
+            box-shadow: none;
+        }
+
+        .product-thumb {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            margin-right: 15px;
+            border-radius: 10px;
+        }
+
+        .product-btn {
+            justify-content: flex-start;
+            padding: 12px 20px;
+            text-align: left;
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.75rem;
+        }
+
+        /* Animação VIP */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(245, 130, 31, 0.7); }
+            70% { box-shadow: 0 0 0 12px rgba(245, 130, 31, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(245, 130, 31, 0); }
+        }
+
+        .btn-vip {
+            border: 2px solid var(--accent-orange);
+            animation: pulse 2s infinite;
+        }
+
+        .footer {
+            margin-top: 20px;
+            background: var(--white);
+            border-radius: 50px;
+            padding: 15px;
+            font-size: 0.75rem;
+            color: var(--text-blue);
+        }
+
+        .footer span { color: var(--accent-orange); font-weight: 700; }
+
+        /* Botão de Compartilhar */
+        .share-link {
+            color: var(--white);
+            text-decoration: underline;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <img src="gpesca.webp" alt="Garimpo da Pesca" class="logo-img">
+        </header>
+
+        <div class="btn info-banner">
+            ⚡ Ofertas Relâmpago: Pegue antes que acabe!
+        </div>
+
+        <a href="SEU_LINK_WHATSAPP" target="_blank" rel="noopener" class="btn btn-vip">
+            <img src="https://img.utdstc.com/icon/ce6/4c5/ce64c5fdcab44eb799b11d71e554c06ede50bc8524cc906de9da7c9aed58983b:200" alt="WhatsApp" class="product-thumb">
+            Ver ofertas no Grupo VIP
+        </a>
+
+        <a href="SEU_LINK_INSTAGRAM" target="_blank" rel="noopener" class="btn">
+            <img src="https://img.freepik.com/vetores-gratis/instagram-logo_1199-122.jpg?semt=ais_hybrid&w=740&q=80" alt="Instagram" class="product-thumb">
+            Dicas diárias de Pesca no Insta
+        </a>
+
+        <a href="LINK_PRODUTO_COM_UTM" target="_blank" rel="noopener" class="btn product-btn">
+            <img src="https://images.tcdn.com.br/img/img_prod/340075/carretilha_shimano_caius_150hg_151hg_12439_1_20251211195321.jpg" alt="Shimano Caius" class="product-thumb" loading="lazy">
+            <div class="product-info">
+                <strong>SHIMANO CAIUS 150HG</strong>
+                <span>Oferta por tempo limitado</span>
+            </div>
+        </a>
+
+        <footer class="footer">
+            Todos os direitos reservados à <span>Garimpo da Pesca</span>, 2026.
+        </footer>
+
+        <div class="share-link" onclick="sharePage()">
+            Indicar este Garimpo para um parceiro de pesca 🎣
+        </div>
+    </div>
+
+    <script>
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Garimpo da Pesca',
+                    text: 'Dá uma olhada nessas ofertas de pesca que encontrei!',
+                    url: window.location.href
+                }).then(() => {
+                    console.log('Compartilhado com sucesso!');
+                }).catch((error) => {
+                    console.log('Erro ao compartilhar:', error);
+                });
+            } else {
+                // Fallback para navegadores que não suportam a API (copiar link)
+                navigator.clipboard.writeText(window.location.href);
+                alert("Link copiado! Agora é só enviar para seus amigos.");
+            }
+        }
+    </script>
+
+</body>
+</html>
