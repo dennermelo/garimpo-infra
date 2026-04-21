@@ -1,10 +1,19 @@
-# --- REDIRECIONAMENTOS DE PRODUTOS (MASCARAMENTO) ---
-# Isso transforma links feios em links profissionais da sua marca
-/carretilha-caius    https://link-de-afiliado-aqui.com.br?utm_source=linkbio&utm_medium=redirect  301
-/vara-pioneer        https://link-de-afiliado-aqui.com.br?utm_source=linkbio&utm_medium=redirect  301
+# --- GARIMPO DA PESCA: REDIRECTS LOTE 01 ---
+
+/r/black-tamba    https://meli.la/1nB78dc  302!
+/r/vara-sougayilang    https://meli.la/1c47yMT  302!
+/r/camisas-uv-3    https://meli.la/1gv2ZHz  302!
+/r/kit-alicates    https://meli.la/1Tb28Ww  302!
+/r/bicudinha-4cm-cor1    https://meli.la/1dPh41L  302!
+/r/bicudinha-4cm-cor2    https://meli.la/1Swp2yD  302!
+/r/bora-420    https://meli.la/2hMcdY5  302!
+/r/maruri-12lb    https://meli.la/1GGR1Lz  302!
+/r/maruri-crafter    https://meli.la/1smoTz7  302!
+
+# --- FIM DO LOTE ---
 
 # --- REDIRECIONAMENTOS DE CANAIS ---
-/vip                 https://chat.whatsapp.com/seu-grupo-aqui  301
+/vip                 https://chat.whatsapp.com/LVkQTCgUmgpLuzVvdkBOTA  301
 /insta               https://instagram.com/garimpopesca      301
 
 # --- TRATAMENTO DE ERROS (Garantia de Navegação) ---
