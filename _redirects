@@ -1,0 +1,12 @@
+# --- REDIRECIONAMENTOS DE PRODUTOS (MASCARAMENTO) ---
+# Isso transforma links feios em links profissionais da sua marca
+/carretilha-caius    https://link-de-afiliado-aqui.com.br?utm_source=linkbio&utm_medium=redirect  301
+/vara-pioneer        https://link-de-afiliado-aqui.com.br?utm_source=linkbio&utm_medium=redirect  301
+
+# --- REDIRECIONAMENTOS DE CANAIS ---
+/vip                 https://chat.whatsapp.com/seu-grupo-aqui  301
+/insta               https://instagram.com/garimpopesca      301
+
+# --- TRATAMENTO DE ERROS (Garantia de Navegação) ---
+# Se o usuário digitar algo errado, ele volta para a home em vez de ver um erro 404
+/* /index.html                               404
