@@ -1,8 +1,8 @@
 :root {
-    --primary-blue: #0027A7;
-    --accent-orange: #F5821F;
+    --primary-blue: #011529;
+    --accent-orange: #FA5114;
     --white: #FFFFFF;
-    --text-blue: #0027A7;
+    --text-blue: #011529;
 }
 
 * {
@@ -162,4 +162,56 @@ body {
     display: flex;
     flex-direction: column;
     gap: 12px; /* Distância entre cada produto da lista */
+}
+
+/* Estilo das Notificações de Prova Social */
+#social-proof-float {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #000B18;
+    padding: 12px 18px;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 9999;
+    transform: translateY(150%);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid rgba(255, 140, 0, 0.3);
+}
+
+#social-proof-float.active {
+    transform: translateY(0);
+}
+
+.user-img {
+    width: 35px;
+    height: 35px;
+    background: #FF8C00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.proof-text {
+    font-size: 0.85rem;
+    line-height: 1.2;
+}
+
+.proof-text strong {
+    display: block;
+    color: #000B18;
+}
+
+.proof-text span {
+    font-size: 0.75rem;
+    opacity: 0.7;
 }

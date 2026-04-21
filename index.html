@@ -9,7 +9,7 @@
     <meta name="description" content="As melhores ofertas de pesca: Shimano, Marine Sports e mais.">
     <meta property="og:title" content="Garimpo da Pesca | Ofertas VIP">
     <meta property="og:description" content="Acesse nosso grupo exclusivo e acompanhe as promoções.">
-    <meta property="og:image" content="assets/img/logo/og.webp">
+    <meta property="og:image" content="assets.">
     <link rel="icon" type="image/webp" href="assets/img/logo/favicon.webp">
     <link rel="stylesheet" href="assets/css/index.css">
 
@@ -33,13 +33,18 @@
 
         <a href="SEU_LINK_WHATSAPP" target="_blank" rel="noopener" class="btn btn-vip">
             <img src="assets/img/icons/whatsapp.webp" alt="WhatsApp" class="product-thumb">
-            Ver ofertas no Grupo VIP
+            Entre no Grupo VIP agora!
         </a>
 
         <a href="SEU_LINK_INSTAGRAM" target="_blank" rel="noopener" class="btn">
             <img src="assets/img/icons/instagram.webp" alt="Instagram" class="product-thumb">
-            Dicas diárias de Pesca no Insta
+            Acompanhe nosso Instagram
         </a>
+        
+        <div class="btn" onclick="sharePage()">
+            <img src="assets/img/icons/share.webp" alt="Instagram" class="product-thumb" >
+            Compartilhar com um amigo
+        </div>
 
         <section class="products-section">
             <h3 class="section-title">Produtos em destaque</h3>
@@ -56,13 +61,12 @@
             </div>
         </section>
 
+        
+
         <footer class="footer">
             Todos os direitos reservados à <span>Garimpo da Pesca</span>, 2026.
         </footer>
 
-        <div class="share-link" onclick="sharePage()">
-            Indicar este Garimpo para um parceiro de pesca 🎣
-        </div>
     </div>
 
     <script>
@@ -83,6 +87,47 @@
                 alert("Link copiado! Agora é só enviar para seus amigos.");
             }
         }
+        const notifications = [
+    { name: "Ricardo S.", city: "Canoas - RS" },
+    { name: "Mateus G.", city: "São Leopoldo - RS" },
+    { name: "Carlos Henrique", city: "Porto Alegre - RS" },
+    { name: "Felipe Silva", city: "Novo Hamburgo - RS" },
+    { name: "Anderson P.", city: "Imbé - RS" },
+    { name: "João V.", city: "Tramandaí - RS" }
+];
+
+function showNotification() {
+    const container = document.createElement('div');
+    container.id = 'social-proof-float';
+    container.innerHTML = `
+        <div class="user-img">🎣</div>
+        <div class="proof-text">
+            <strong id="proof-name"></strong>
+            <span id="proof-city">acabou de entrar no grupo!</span>
+        </div>
+    `;
+    document.body.appendChild(container);
+
+    const notify = () => {
+        const data = notifications[Math.floor(Math.random() * notifications.length)];
+        document.getElementById('proof-name').innerText = data.name;
+        document.getElementById('proof-city').innerText = `${data.city} acabou de entrar no grupo`;
+        
+        container.classList.add('active');
+        
+        setTimeout(() => {
+            container.classList.remove('active');
+        }, 5000); // Fica visível por 5 segundos
+    };
+
+    // Primeira exibição após 3 segundos
+    setTimeout(notify, 3000);
+    
+    // Repete a cada 12 a 20 segundos para não parecer robótico
+    setInterval(notify, Math.floor(Math.random() * (20000 - 12000 + 1)) + 12000);
+}
+
+window.onload = showNotification;
     </script>
 
 </body>
