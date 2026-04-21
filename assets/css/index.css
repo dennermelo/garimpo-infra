@@ -138,3 +138,28 @@ body {
     cursor: pointer;
     opacity: 0.8;
 }
+/* Espaçamento e Estilo da Seção de Produtos */
+.products-section {
+    margin-top: 32px; /* Aqui é a distância que você pediu */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.section-title {
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-left: 4px;
+    border-left: 3px solid var(--accent-orange); /* Detalhe lateral para destaque */
+    margin-bottom: 4px;
+}
+
+.products-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Distância entre cada produto da lista */
+}
