@@ -7,62 +7,64 @@
     <title>Garimpo da Pesca | Ofertas VIP</title>
 
     <meta name="description" content="As melhores ofertas de pesca: Shimano, Marine Sports e mais.">
+    
     <meta property="og:title" content="Garimpo da Pesca | Ofertas VIP">
     <meta property="og:description" content="Acesse nosso grupo exclusivo e acompanhe as promoções.">
-    <meta property="og:image" content="assets.">
+    <meta property="og:image" content="https://gpesca.netlify.app/assets/img/logo/og.webp"> 
+    
     <link rel="icon" type="image/webp" href="assets/img/logo/favicon.webp">
     <link rel="stylesheet" href="assets/css/index.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-
 </head>
 
 <body>
 
     <div class="container">
         <header class="header">
-            <img src="assets/img/logo/gpesca.webp" alt="Garimpo da Pesca" class="logo-img">
+            <h1 style="display:none;">Garimpo da Pesca - Melhores Ofertas de Equipamentos</h1>
+            <img src="assets/img/logo/gpesca.webp" alt="Logotipo Garimpo da Pesca" class="logo-img" width="280" height="80">
         </header>
 
-        <div class="btn info-banner">
+        <div class="btn info-banner" role="alert">
             ⚡ Ofertas Relâmpago: Pegue antes que acabe!
         </div>
 
-        <a href="SEU_LINK_WHATSAPP" target="_blank" rel="noopener" class="btn btn-vip">
-            <img src="assets/img/icons/whatsapp.webp" alt="WhatsApp" class="product-thumb">
-            Ver ofertas no Grupo VIP
-        </a>
+        <nav aria-label="Links principais">
+            <a href="SEU_LINK_WHATSAPP" target="_blank" rel="noopener" class="btn btn-vip" aria-label="Entrar no Grupo VIP do WhatsApp">
+                <img src="assets/img/icons/whatsapp.webp" alt="" class="product-thumb" width="45" height="45">
+                Ver ofertas no Grupo VIP
+            </a>
 
-        <a href="SEU_LINK_INSTAGRAM" target="_blank" rel="noopener" class="btn">
-            <img src="assets/img/icons/instagram.webp" alt="Instagram" class="product-thumb">
-            Dicas diárias de Pesca no Insta
-        </a>
+            <a href="SEU_LINK_INSTAGRAM" target="_blank" rel="noopener" class="btn" aria-label="Seguir no Instagram">
+                <img src="assets/img/icons/instagram.webp" alt="" class="product-thumb" width="45" height="45">
+                Dicas diárias de Pesca no Insta
+            </a>
+        </nav>
 
         <section class="products-section">
-            <h3 class="section-title">Produtos em destaque</h3>
+            <h2 class="section-title">Produtos em destaque</h2>
 
             <div class="products-list">
                 <a href="LINK_PRODUTO_COM_UTM" target="_blank" rel="noopener" class="btn product-btn">
-                    <img src="assets/img/logo/favicon.webp" alt="Shimano Caius" class="product-thumb" loading="lazy">
+                    <img src="assets/img/logo/favicon.webp" alt="Carretilha Shimano Caius" class="product-thumb" width="45" height="45" loading="lazy">
                     <div class="product-info">
                         <strong>SHIMANO CAIUS 150HG</strong>
                         <span>Oferta por tempo limitado</span>
                     </div>
                 </a>
-
             </div>
         </section>
 
         <footer class="footer">
-            Todos os direitos reservados à <span>Garimpo da Pesca</span>, 2026.
+            <p>Todos os direitos reservados à <span>Garimpo da Pesca</span>, 2026.</p>
         </footer>
 
-        <div class="share-link" onclick="sharePage()">
+        <button class="share-link" onclick="sharePage()" style="background:none; border:none; color:inherit; cursor:pointer; text-decoration:underline; font-family:inherit;">
             Indicar este Garimpo para um parceiro de pesca 🎣
-        </div>
+        </button>
     </div>
 
     <script>
@@ -72,13 +74,8 @@
                     title: 'Garimpo da Pesca',
                     text: 'Dá uma olhada nessas ofertas de pesca que encontrei!',
                     url: window.location.href
-                }).then(() => {
-                    console.log('Compartilhado com sucesso!');
-                }).catch((error) => {
-                    console.log('Erro ao compartilhar:', error);
-                });
+                }).catch((error) => console.log('Erro ao compartilhar:', error));
             } else {
-                // Fallback para navegadores que não suportam a API (copiar link)
                 navigator.clipboard.writeText(window.location.href);
                 alert("Link copiado! Agora é só enviar para seus amigos.");
             }
@@ -86,5 +83,4 @@
     </script>
 
 </body>
-
 </html>
