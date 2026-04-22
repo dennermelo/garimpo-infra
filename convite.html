@@ -274,55 +274,12 @@
             ENTRAR NO GRUPO VIP (GRÁTIS)
         </a>
         
-        <p class="scarcity-text">⚠️ Vagas limitadas: 237/250 pescadores já no grupo.</p>
+        <p class="scarcity-text">⚠️ As vagas do Grupo são limitadas.</p>
 
         <footer class="footer">
             Todos os direitos reservados à <span>Garimpo da Pesca</span>, 2026.
         </footer>
     </div>
-
-    <script>
-        const notifications = [
-            { name: "Ricardo S.", city: "Canoas - RS" },
-            { name: "Mateus G.", city: "São Leopoldo - RS" },
-            { name: "Carlos Henrique", city: "Porto Alegre - RS" },
-            { name: "Felipe Silva", city: "Novo Hamburgo - RS" },
-            { name: "Anderson P.", city: "Imbé - RS" },
-            { name: "João V.", city: "Tramandaí - RS" },
-            { name: "Rodrigo M.", city: "Porto Alegre - RS" },
-            { name: "Lucas B.", city: "São Leopoldo - RS" }
-        ];
-
-        function showNotification() {
-            const container = document.createElement('div');
-            container.id = 'social-proof-float';
-            container.innerHTML = `
-                <div class="user-img">🎣</div>
-                <div class="proof-text">
-                    <strong id="proof-name"></strong>
-                    <span id="proof-city"></span>
-                </div>
-            `;
-            document.body.appendChild(container);
-
-            const notify = () => {
-                const data = notifications[Math.floor(Math.random() * notifications.length)];
-                document.getElementById('proof-name').innerText = data.name;
-                document.getElementById('proof-city').innerText = `${data.city} acabou de entrar no grupo!`;
-                
-                container.classList.add('active');
-                
-                setTimeout(() => {
-                    container.classList.remove('active');
-                }, 5000); 
-            };
-
-            setTimeout(notify, 3000);
-            setInterval(notify, Math.floor(Math.random() * (22000 - 15000 + 1)) + 15000);
-        }
-
-        window.onload = showNotification;
-    </script>
 
 </body>
 </html>
