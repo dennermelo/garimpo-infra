@@ -4,15 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garimpo da Pesca | Ofertas de Elite no WhatsApp</title>
+    <title>Garimpo da Pesca | Acesso VIP</title>
 
-    <meta name="description" content="Pare de pagar caro em tralha que não aguenta o tranco. Entre no Grupo VIP e receba curadoria técnica de ofertas Shimano, Marine Sports e mais.">
-    <meta property="og:title" content="Garimpo da Pesca | Melhores Ofertas de Pesca e Tralhas VIP">
-    <meta property="og:description" content="Curadoria técnica com links 100% verificados. Economize agora.">
+    <meta name="description" content="Pare de pagar caro em tralha que não aguenta o tranco. Entre no Grupo VIP e receba curadoria técnica de ofertas verificadas.">
+    <meta property="og:title" content="Garimpo da Pesca | Melhores Ofertas de Pesca">
     <meta property="og:image" content="https://garimpodapesca.com.br/assets/img/logo/og.webp">
     <link rel="icon" type="image/webp" href="assets/img/logo/favicon.webp">
     
-    <link rel="stylesheet" href="assets/css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -31,59 +29,145 @@
     fbq('init', '1680198840077765');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1680198840077765&ev=PageView&noscript=1"
-    /></noscript>
     <style>
-        /* Ajustes específicos para a Landing Page de Alta Conversão */
-        .hero-content {
-            text-align: center;
-            padding: 40px 20px;
-            color: #fff;
+        :root {
+            --bg-color: #03111e;
+            --primary-orange: #ff5722;
+            --whatsapp-green: #25d366;
+            --text-white: #ffffff;
+            --text-gray: #cccccc;
         }
-        .hero-content h1 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            line-height: 1.2;
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            /* Espaço extra no fundo para a prova social não cobrir o rodapé */
+            padding-bottom: 120px; 
         }
-        .hero-content p {
-            font-size: 1rem;
-            color: #ccc;
-            margin-bottom: 30px;
-        }
-        .benefits-list {
-            text-align: left;
-            max-width: 400px;
-            margin: 0 auto 40px;
-            background: rgba(255, 255, 255, 0.05);
+
+        .container {
+            width: 100%;
+            max-width: 480px;
             padding: 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
         }
-        .benefits-list li {
-            list-style: none;
-            margin-bottom: 12px;
-            font-size: 0.9rem;
+
+        .header { margin-bottom: 30px; }
+        .logo-img { max-width: 200px; height: auto; }
+
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .sub-headline {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        /* BOX DE BENEFÍCIOS AJUSTADO */
+        .benefits-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 35px;
+            text-align: left;
+        }
+
+        .benefit-item {
+            display: grid;
+            grid-template-columns: 30px 1fr; /* Garante que o check não empurre o texto */
+            align-items: start;
+            margin-bottom: 15px;
+        }
+
+        .benefit-item:last-child { margin-bottom: 0; }
+
+        .benefit-item span.check { color: var(--whatsapp-green); font-weight: bold; }
+
+        .benefit-text { font-size: 0.88rem; line-height: 1.4; }
+        .benefit-text strong { display: inline-block; width: 100px; } /* Alinha os títulos internos */
+
+        /* BOTÃO COM GLOW SUAVIZADO */
+        .btn-vip {
             display: flex;
             align-items: center;
-        }
-        .benefits-list li::before {
-            content: '✅';
-            margin-right: 10px;
-        }
-        .btn-vip {
-            background-color: #25d366 !important;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            animation: pulse 2s infinite;
-            font-weight: 700 !important;
-            padding: 18px !important;
+            justify-content: center;
+            background-color: var(--whatsapp-green);
+            color: #fff;
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25); /* Glow suavizado */
+            animation: pulse 2s infinite;
+            margin-bottom: 10px;
         }
+
+        .product-thumb { width: 24px; height: 24px; margin-right: 12px; }
+
+        /* GATILHO DE ESCASSEZ */
+        .scarcity-text {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .footer {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .footer span { color: var(--primary-orange); }
+
+        /* PROVA SOCIAL POSICIONADA MAIS ALTA */
+        #social-proof-float {
+            position: fixed;
+            bottom: 30px; /* Subi para não bater no rodapé */
+            left: 20px;
+            right: 20px;
+            background: #f8f9fa;
+            color: #333;
+            padding: 12px 15px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 9999;
+            transform: translateY(150%);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        #social-proof-float.active { transform: translateY(0); }
+
+        .user-img { font-size: 20px; margin-right: 12px; }
+        .proof-text { font-size: 0.8rem; line-height: 1.2; text-align: left; }
+        .proof-text strong { display: block; color: #000; }
+
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            50% { transform: scale(1.03); }
             100% { transform: scale(1); }
+        }
+
+        @media (max-width: 370px) {
+            h1 { font-size: 1.4rem; }
+            .benefit-text strong { width: auto; display: block; margin-bottom: 2px; }
         }
     </style>
 </head>
@@ -95,25 +179,37 @@
             <img src="assets/img/logo/gpesca.webp" alt="Garimpo da Pesca" class="logo-img">
         </header>
 
-        <section class="hero-content">
-            <h1>Fisgue as melhores ofertas antes que o estoque acabe! 🎣</h1>
-            <p>Curadoria técnica de tralhas para quem pesca de verdade. Links 100% verificados das maiores lojas do Brasil.</p>
+        <h1>Fisgue as melhores ofertas antes que o estoque acabe! 🎣</h1>
+        
+        <p class="sub-headline">
+            Curadoria técnica de tralhas para quem pesca de verdade. Links 100% verificados das maiores lojas do Brasil.
+        </p>
 
-            <ul class="benefits-list">
-                <li><strong>Ofertas de Elite:</strong> Shimano, Marine e mais.</li>
-                <li><strong>Segurança:</strong> Vendedores nota máxima.</li>
-                <li><strong>Rapidez:</strong> Alertas em tempo real no seu celular.</li>
-            </ul>
-
-            <a href="https://chat.whatsapp.com/BeZbxAuesem7zhGseGCxOA" 
-               onclick="fbq('track', 'Lead');" 
-               target="_blank" 
-               rel="noopener" 
-               class="btn btn-vip">
-                <img src="assets/img/icons/whatsapp.webp" alt="WhatsApp" class="product-thumb">
-                ENTRAR NO GRUPO VIP (GRÁTIS)
-            </a>
+        <section class="benefits-card">
+            <div class="benefit-item">
+                <span class="check">✓</span>
+                <div class="benefit-text"><strong>Ofertas de Elite:</strong> Shimano, Marine, Albatroz e muito mais.</div>
+            </div>
+            <div class="benefit-item">
+                <span class="check">✓</span>
+                <div class="benefit-text"><strong>Segurança:</strong> Analisamos a reputação de cada vendedor.</div>
+            </div>
+            <div class="benefit-item">
+                <span class="check">✓</span>
+                <div class="benefit-text"><strong>Rapidez:</strong> Alertas em tempo real direto no seu WhatsApp.</div>
+            </div>
         </section>
+
+        <a href="https://chat.whatsapp.com/LVkQTCgUmgpLuzVvdkBOTA" 
+           onclick="fbq('track', 'Lead');" 
+           target="_blank" 
+           rel="noopener" 
+           class="btn btn-vip">
+            <img src="assets/img/icons/whatsapp.webp" alt="WhatsApp" class="product-thumb">
+            ENTRAR NO GRUPO VIP (GRÁTIS)
+        </a>
+        
+        <p class="scarcity-text">⚠️ Vagas limitadas: 237/250 pescadores já no grupo.</p>
 
         <footer class="footer">
             Todos os direitos reservados à <span>Garimpo da Pesca</span>, 2026.
@@ -121,7 +217,6 @@
     </div>
 
     <script>
-        // Script de Prova Social Original (Mantido por ser excelente)
         const notifications = [
             { name: "Ricardo S.", city: "Canoas - RS" },
             { name: "Mateus G.", city: "São Leopoldo - RS" },
@@ -129,8 +224,8 @@
             { name: "Felipe Silva", city: "Novo Hamburgo - RS" },
             { name: "Anderson P.", city: "Imbé - RS" },
             { name: "João V.", city: "Tramandaí - RS" },
-            { name: "Denner M.", city: "São Leopoldo - RS" },
-            { name: "Rodrigo F.", city: "Capão da Canoa - RS" }
+            { name: "Rodrigo M.", city: "Porto Alegre - RS" },
+            { name: "Lucas B.", city: "São Leopoldo - RS" }
         ];
 
         function showNotification() {
@@ -140,7 +235,7 @@
                 <div class="user-img">🎣</div>
                 <div class="proof-text">
                     <strong id="proof-name"></strong>
-                    <span id="proof-city">acabou de entrar no grupo!</span>
+                    <span id="proof-city"></span>
                 </div>
             `;
             document.body.appendChild(container);
@@ -148,17 +243,17 @@
             const notify = () => {
                 const data = notifications[Math.floor(Math.random() * notifications.length)];
                 document.getElementById('proof-name').innerText = data.name;
-                document.getElementById('proof-city').innerText = `${data.city} acabou de entrar no grupo`;
+                document.getElementById('proof-city').innerText = `${data.city} acabou de entrar no grupo!`;
                 
                 container.classList.add('active');
                 
                 setTimeout(() => {
                     container.classList.remove('active');
-                }, 5000);
+                }, 5000); 
             };
 
             setTimeout(notify, 3000);
-            setInterval(notify, Math.floor(Math.random() * (20000 - 12000 + 1)) + 12000);
+            setInterval(notify, Math.floor(Math.random() * (22000 - 15000 + 1)) + 15000);
         }
 
         window.onload = showNotification;
