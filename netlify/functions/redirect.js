@@ -29,7 +29,7 @@ exports.handler = async (event) => {
 
             // 3. Avisa o n8n (Substitua quando tiver o link real)
             // 3. Avisa o n8n e ESPERA a resposta
-            const n8nWebhook = 'https://n8n-n8n.wewdsc.easypanel.host/webhook-test/registrar-clique'; // Use o Production URL
+            const n8nWebhook = 'https://n8n-n8n.wewdsc.easypanel.host/webhook/registrar-clique'; // Use o Production URL
 
             try {
                 // Adicionamos o 'await' aqui para a função não fechar antes de enviar
