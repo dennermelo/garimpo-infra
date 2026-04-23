@@ -7,7 +7,7 @@ exports.handler = async (event) => {
 
     try {
         // 1. Busca no NocoDB usando o FETCH nativo (padrão em 2026)
-        const response = await fetch(`${NOCODB_TABLE_URL}?where=(Slug,eq,${slug})`, {
+        const response = await fetch(`${NOCODB_TABLE_URL}?where=(slug,eq,${slug})`, {
             method: 'GET',
             headers: { 'xc-token': NOCODB_API_KEY }
         });
