@@ -1,5 +1,3 @@
-const axios = require('axios');
-
 exports.handler = async (event) => {
     const slug = event.path.split('/').pop();
     
@@ -8,25 +6,27 @@ exports.handler = async (event) => {
     const NOCODB_TABLE_URL = "https://noco-nocodb.wewdsc.easypanel.host/api/v1/db/data/v1/p3avirysfwsticf/mf22l7zpcov4sda"; 
 
     try {
-        // 1. Busca a URL original no NocoDB filtrando pelo Slug
-        const response = await axios.get(`${NOCODB_TABLE_URL}?where=(Slug,eq,${slug})`, {
+        // 1. Busca no NocoDB usando o FETCH nativo (padrão em 2026)
+        const response = await fetch(`${NOCODB_TABLE_URL}?where=(Slug,eq,${slug})`, {
+            method: 'GET',
             headers: { 'xc-token': NOCODB_API_KEY }
         });
 
-        const registro = response.data.list && response.data.list[0];
+        const data = await response.json();
+        const registro = data.list && data.list[0];
 
         if (registro) {
             const targetUrl = registro.URL_Original;
             const rowId = registro.id;
 
-            // 2. Avisa o n8n (Troque pela sua URL de Webhook do n8n se já tiver)
-            axios.post('https://seu-n8n.host/webhook/registrar-clique', {
-                rowId: rowId,
-                slug: slug,
-                timestamp: new Date().toISOString()
-            }).catch(e => console.error("Erro n8n silencioso"));
+            // 2. Avisa o n8n (Troque pela sua URL de Webhook do n8n)
+            fetch('https://seu-n8n.host/webhook/registrar-clique', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ rowId, slug, timestamp: new Date().toISOString() })
+            }).catch(() => {}); // Silencioso se falhar
 
-            // 3. Redirecionamento instantâneo
+            // 3. Redirecionamento 302
             return {
                 statusCode: 302,
                 headers: { 
@@ -40,7 +40,6 @@ exports.handler = async (event) => {
         return { statusCode: 404, body: "Link não encontrado no Garimpo." };
 
     } catch (error) {
-        console.error("Erro técnico:", error.message);
-        return { statusCode: 500, body: "Erro na conexão com o banco de dados." };
+        return { statusCode: 500, body: "Erro de conexão com o banco." };
     }
 };
