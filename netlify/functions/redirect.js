@@ -19,7 +19,7 @@ exports.handler = async (event) => {
 
         if (registro) {
             // Verificando se a coluna URL_Original existe e tem conteúdo
-            const targetUrl = registro.URL_Original;
+            const targetUrl = registro.url_original;
             const rowId = registro.id;
 
             console.log(`LOG: Registro encontrado! ID: ${rowId} | Redirecionando para: ${targetUrl}`);
