@@ -1,8 +1,10 @@
-
 # --- REDIRECIONAMENTOS DE CANAIS ---
 /vip                 https://chat.whatsapp.com/LVkQTCgUmgpLuzVvdkBOTA  301
-/insta               https://instagram.com/garimpopesca      301
+/insta               https://instagram.com/garimpopesca       301
+
+# --- RASTREAMENTO TÉCNICO (Obrigatoriamente antes do /*) ---
+/r/* /.netlify/functions/redirect             200
 
 # --- TRATAMENTO DE ERROS (Garantia de Navegação) ---
-# Se o usuário digitar algo errado, ele volta para a home em vez de ver um erro 404
+# Esta deve ser SEMPRE a última linha
 /* /index.html                               404
