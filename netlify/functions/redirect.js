@@ -4,7 +4,7 @@ exports.handler = async (event) => {
     console.log(`LOG: Buscando pelo slug: [${slug}]`);
 
     const NOCODB_API_KEY = "AZ-75uL73daFrCSd4YH-6SRzTQGXqxO4wz-3nHVF";
-    const NOCODB_TABLE_URL = "https://noco-nocodb.wewdsc.easypanel.host/api/v1/db/data/v1/p3avirysfwsticf/mf22l7zpcov4sda"; 
+    const NOCODB_TABLE_URL = "https://noco-nocodb.wewdsc.easypanel.host/api/v1/db/data/v1/p3avirysfwsticf/mf22l7zpcov4sda";
 
     try {
         // 2. Busca com 'slug' (minúsculo) para bater com sua tabela
@@ -18,7 +18,7 @@ exports.handler = async (event) => {
 
         if (registro) {
             // Ajustado para os nomes exatos da sua imagem
-            const targetUrl = registro.url_original; 
+            const targetUrl = registro.url_original;
             const rowId = registro.Id || registro.id; // NocoDB geralmente envia Id
 
             console.log(`LOG: Sucesso! Registro achado. ID: ${rowId} | Indo para: ${targetUrl}`);
@@ -28,24 +28,20 @@ exports.handler = async (event) => {
             }
 
             // 3. Avisa o n8n (Substitua quando tiver o link real)
-            const n8nWebhook = 'https://n8n-n8n.wewdsc.easypanel.host/webhook-test/registrar-clique';
-            
-                fetch(n8nWebhook, {
+            // 3. Avisa o n8n e ESPERA a resposta
+            const n8nWebhook = 'https://n8n-n8n.wewdsc.easypanel.host/webhook/registrar-clique'; // Use o Production URL
+
+            try {
+                // Adicionamos o 'await' aqui para a função não fechar antes de enviar
+                await fetch(n8nWebhook, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ rowId, slug, timestamp: new Date().toISOString() })
-                }).catch(() => {});
-            
-
-            // 4. Redirecionamento
-            return {
-                statusCode: 302,
-                headers: { 
-                    'Location': targetUrl,
-                    'Cache-Control': 'no-cache'
-                },
-                body: '',
-            };
+                });
+                console.log("LOG: n8n avisado com sucesso.");
+            } catch (e) {
+                console.error("LOG: Falha ao avisar o n8n:", e.message);
+            }
         }
 
         console.log(`LOG: Slug [${slug}] nao existe no banco.`);
