@@ -10,13 +10,9 @@ exports.handler = async (event) => {
     }
 
     // 2. Pega o slug e limpa barras
+    
     const slug = event.path.split('/').filter(Boolean).pop();
     console.log(`LOG: Clique real detectado! Slug: [${slug}] | IP: ${event.headers['x-nf-client-connection-ip']}`);
-    
-    // ... restante do seu código (NocoDB, fetch n8n, etc)
-    // 1. Pega o slug e limpa barras
-    const slug = event.path.split('/').filter(Boolean).pop();
-    console.log(`LOG: Buscando pelo slug: [${slug}]`);
 
     const NOCODB_API_KEY = "AZ-75uL73daFrCSd4YH-6SRzTQGXqxO4wz-3nHVF";
     const NOCODB_TABLE_URL = "https://noco-nocodb.wewdsc.easypanel.host/api/v1/db/data/v1/p3avirysfwsticf/mf22l7zpcov4sda";
