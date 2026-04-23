@@ -42,7 +42,19 @@ exports.handler = async (event) => {
             } catch (e) {
                 console.error("LOG: Falha ao avisar o n8n:", e.message);
             }
+
+            // 4. Redirecionamento
+            return {
+                statusCode: 302,
+                headers: {
+                    'Location': targetUrl,
+                    'Cache-Control': 'no-cache'
+                },
+                body: '',
+            };
         }
+
+
 
         console.log(`LOG: Slug [${slug}] nao existe no banco.`);
         return { statusCode: 404, body: "Link nao encontrado no Garimpo." };
