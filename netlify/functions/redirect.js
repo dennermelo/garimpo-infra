@@ -1,4 +1,19 @@
 exports.handler = async (event) => {
+    // 1. FILTRO DE SEGURANÇA: Ignora pré-carregamentos e robôs de prévia
+    const ua = event.headers['user-agent'] || '';
+    const isPrefetch = event.headers['purpose'] === 'prefetch' || event.headers['sec-purpose'] === 'prefetch';
+    const isCrawler = /WhatsApp|facebookexternalhit|TelegramBot|Twitterbot/i.test(ua);
+
+    if (isPrefetch || isCrawler) {
+        console.log(`LOG: Ignorando clique automático de: ${ua}`);
+        return { statusCode: 204, body: '' }; // Retorna "Sem Conteúdo" e para aqui
+    }
+
+    // 2. Pega o slug e limpa barras
+    const slug = event.path.split('/').filter(Boolean).pop();
+    console.log(`LOG: Clique real detectado! Slug: [${slug}] | IP: ${event.headers['x-nf-client-connection-ip']}`);
+    
+    // ... restante do seu código (NocoDB, fetch n8n, etc)
     // 1. Pega o slug e limpa barras
     const slug = event.path.split('/').filter(Boolean).pop();
     console.log(`LOG: Buscando pelo slug: [${slug}]`);
