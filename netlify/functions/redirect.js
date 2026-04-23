@@ -28,7 +28,7 @@ exports.handler = async (event) => {
             }
 
             // 3. Avisa o n8n (Substitua quando tiver o link real)
-            const n8nWebhook = 'https://n8n-n8n.wewdsc.easypanel.host/webhook/registrar-clique';
+            const n8nWebhook = 'https://n8n-n8n.wewdsc.easypanel.host/webhook-test/registrar-clique';
             if (!n8nWebhook.includes('seu-n8n.host')) {
                 fetch(n8nWebhook, {
                     method: 'POST',
